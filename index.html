@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Deadlock Simulator Desktop</title>
+  <!-- Use Flask's url_for if in templates -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="monitor">
+    <!-- Desktop Icons for 10 Deadlock Scenarios -->
+    <div class="icon" style="left: 50px; top: 50px;" onclick="startScenario(0)">
+      <img src="{{ url_for('static', filename='images/word.png') }}" alt="Word" />
+      <p>Word</p>
+    </div>
+    <div class="icon" style="left: 150px; top: 50px;" onclick="startScenario(1)">
+      <img src="{{ url_for('static', filename='images/antivirus.png') }}" alt="Antivirus" />
+      <p>Antivirus</p>
+    </div>
+    <div class="icon" style="left: 250px; top: 50px;" onclick="startScenario(2)">
+      <img src="{{ url_for('static', filename='images/device-manager.png') }}" alt="Device Manager" />
+      <p>Device Manager</p>
+    </div>
+    <div class="icon" style="left: 350px; top: 50px;" onclick="startScenario(3)">
+      <img src="{{ url_for('static', filename='images/vlc.png') }}" alt="VLC" />
+      <p>VLC</p>
+    </div>
+    <div class="icon" style="left: 450px; top: 50px;" onclick="startScenario(4)">
+      <img src="{{ url_for('static', filename='images/adobe-photoshop.png') }}" alt="Photoshop" />
+      <p>Photoshop</p>
+    </div>
+    <div class="icon" style="left: 550px; top: 50px;" onclick="startScenario(5)">
+      <img src="{{ url_for('static', filename='images/zoom.png') }}" alt="Zoom" />
+      <p>Zoom</p>
+    </div>
+    <div class="icon" style="left: 650px; top: 50px;" onclick="startScenario(6)">
+      <img src="{{ url_for('static', filename='images/virtual-machine.png') }}" alt="VM" />
+      <p>VM</p>
+    </div>
+    <div class="icon" style="left: 750px; top: 50px;" onclick="startScenario(7)">
+      <img src="{{ url_for('static', filename='images/excel.png') }}" alt="Excel" />
+      <p>Excel</p>
+    </div>
+    <div class="icon" style="left: 850px; top: 50px;" onclick="startScenario(8)">
+      <img src="{{ url_for('static', filename='images/source-code.png') }}" alt="Code Editor" />
+      <p>Code Editor</p>
+    </div>
+    <div class="icon" style="left: 950px; top: 50px;" onclick="startScenario(9)">
+      <img src="{{ url_for('static', filename='images/video-file.png') }}" alt="Video File" />
+      <p>Video File</p>
+    </div>
+  </div>
+
+  <!-- Process Log Panel: Will show simulation step logs after resolution -->
+  <div class="log-panel">
+    <h2>🔍 Process Log</h2>
+    <div id="logContent"></div>
+  </div>
+
+  <!-- Modal for Deadlock Report and Resolution -->
+  <div class="modal" id="modal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h2>Deadlock Report</h2>
+        <button class="modal-close" onclick="closeModal()">&times;</button>
+      </div>
+      <div id="modalText"></div>
+      <!-- The "Resolve" button triggers the process log simulation -->
+      <button class="resolve-btn" onclick="resolveDeadlock()">Resolve Deadlock</button>
+    </div>
+  </div>
+
+  <!-- Audio Elements for Sound Effects (place your click and alert sounds in static folder) -->
+  <audio id="click-sound" src="{{ url_for('static', filename='sounds/click.mp3') }}"></audio>
+  <audio id="alert-sound" src="{{ url_for('static', filename='sounds/alert.mp3') }}"></audio>
+
+  <!-- Include JavaScript -->
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
