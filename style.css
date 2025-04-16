@@ -1,0 +1,113 @@
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: url('https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExcDRjbnF2M3dvYXBiMGkwYXF1ZjdoaDg1ZWRiMjhtZjZybHIyMmMwNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/IcZhFmufozDCij3p22/giphy.gif') no-repeat center center fixed;
+  background-size: cover;
+  overflow: hidden;
+}
+
+/* Monitor container */
+.monitor {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+/* Desktop icons */
+.icon {
+  width: 80px;
+  text-align: center;
+  position: absolute;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.icon:hover {
+  transform: scale(1.1);
+}
+.icon img {
+  width: 64px;
+  height: 64px;
+}
+.icon p {
+  margin: 5px 0 0;
+  font-size: 13px;
+  color: white;
+  text-shadow: 1px 1px 2px black;
+}
+
+/* Process Log Panel */
+.log-panel {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 350px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  color: #00ffcc;
+  overflow-y: auto;
+  padding: 20px;
+  box-sizing: border-box;
+  z-index: 100;
+  box-shadow: -2px 0 10px rgba(0,0,0,0.5);
+}
+.log-panel h2 {
+  margin-top: 0;
+  font-size: 20px;
+  border-bottom: 1px solid #00ffcc;
+  padding-bottom: 5px;
+}
+#logContent {
+  font-size: 14px;
+  line-height: 1.6;
+  white-space: pre-line;
+}
+
+/* Modal Styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+.modal-box {
+  background: #2e2e2e;
+  padding: 20px;
+  border-radius: 10px;
+  width: 500px;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 0 15px rgba(0,0,0,0.6);
+  color: #fff;
+}
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.modal-close {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+}
+.resolve-btn {
+  margin-top: 15px;
+  padding: 10px 15px;
+  background: #28a745;
+  border: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.resolve-btn:hover {
+  background: #218838;
+}
